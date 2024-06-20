@@ -1,13 +1,23 @@
 {
-  "private": true,
+  "name": "modern-express-starter",
+  "version": "1.0.0",
+  "description": "A Modern Node.js Express starter.",
   "type": "module",
+  "private": true,
+  "main": "index.js",
   "scripts": {
-    "test": "node --test",
-    "lint": "npm run format -- -c",
-    "format": "prettier --write './**/*.{js,json,yml,md}'"
+    "start": "node ./index.js",
+    "dev": "node --watch ./index.js",
+    "test": "node --test ./*.test.js",
+    "lint": "biome lint --write ./*.js",
+    "format": "biome format --write ./*.js"
   },
-  "license": "MIT",
+  "author": "Hugo Di Francesco",
+  "dependencies": {
+    "express": "4.19.2"
+  },
   "devDependencies": {
-    "prettier": "3.0.3"
+    "@biomejs/biome": "1.8.2",
+    "supertest": "7.0.0"
   }
 }
